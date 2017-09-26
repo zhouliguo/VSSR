@@ -1,0 +1,25 @@
+# The train/test net protocol buffer definition
+net: "examples/sr/satellite_sr.prototxt"
+test_iter: 432
+# Carry out testing every 500 training iterations.
+test_interval: 500
+# The base learning rate, momentum and the weight decay of the network.
+type: "Adam"
+base_lr: 0.0001
+momentum: 0.9
+weight_decay: 0.0001
+#clip_gradients: 5.0
+# The learning rate policy
+lr_policy: "step"
+stepsize: 200000
+gamma: 0.5
+# Display every 100 iterations
+display: 100
+# The maximum number of iterations
+max_iter: 1500000
+# snapshot intermediate results
+snapshot: 10000
+snapshot_prefix: "examples/sr/Model/satellite"
+# solver mode: CPU or GPU
+solver_mode: GPU
+
